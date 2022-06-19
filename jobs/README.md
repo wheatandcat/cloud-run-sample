@@ -1,4 +1,4 @@
-#  お試し
+# Cloud Runの紹介
 
 https://cloud.google.com/run/docs/quickstarts/jobs/build-create-go?hl=ja
 
@@ -11,7 +11,7 @@ $ gcloud builds submit --pack image=gcr.io/PROJECT_ID/logger-job
 ```
 
 
-### 実行
+### ジョブ作成
 
 ```bash
 $ gcloud beta run jobs create job-quickstart \
@@ -22,6 +22,13 @@ $ gcloud beta run jobs create job-quickstart \
     --max-retries 5 \
     --region REGION
 ```
+
+### 実行
+
+```bash
+$ gcloud beta run jobs execute job-quickstart
+```
+
 
 ### ローカルテスト
 
@@ -34,6 +41,8 @@ $ docker run --rm -e FAIL_RATE=0.9 -e SLEEP_MS=1000 gcr.io/PROJECT_ID/logger-job
 
 https://cloud.google.com/run/docs/execute/jobs-on-schedule?hl=ja#console
 
+
+■ API
 ```
 https://REGION-run.googleapis.com/apis/run.googleapis.com/v1/namespaces/PROJECT-ID/jobs/JOB-NAME:run
 ```
